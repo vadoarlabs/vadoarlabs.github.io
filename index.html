@@ -5,29 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Researcher Name | AI & Blockchain</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #1a1a1b; color: #f9f9f9; font-family: 'Georgia', serif; }
-        .emerald-accent { color: #10b981; } /* Emerald 500 */
-        .border-emerald { border-color: #10b981; }
-        .mono { font-family: 'Courier New', monospace; }
+        :root { --emerald: #10b981; --dark: #121212; --light: #f4f4f5; }
+        body { background-color: var(--dark); color: var(--light); font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .mono { font-family: 'Fira Code', monospace; font-size: 0.85rem; }
+        .emerald-text { color: var(--emerald); }
+        .border-emerald { border-color: var(--emerald); }
+        .hover-emerald:hover { color: var(--emerald); transition: 0.3s; }
+        .card { background: #1a1a1b; border-left: 2px solid #2d2d2d; transition: 0.3s; }
+        .card:hover { border-left: 2px solid var(--emerald); background: #212122; }
     </style>
 </head>
-<body class="p-8 md:p-24">
-    <nav class="flex justify-between items-center mb-16">
-        <h1 class="text-xl font-bold tracking-widest uppercase">Dr. Name</h1>
-        <div class="space-x-6 mono text-sm">
-            <a href="#about" class="hover:emerald-accent">ABOUT</a>
-            <a href="#projects" class="hover:emerald-accent">PROJECTS</a>
-            <a href="#research" class="hover:emerald-accent">RESEARCH</a>
-            <a href="https://yourname.substack.com" class="bg-emerald-600 text-white px-4 py-2 rounded">SUBSCRIBE</a>
+<body class="max-w-6xl mx-auto px-6 py-12 md:py-24">
+
+    <nav class="flex justify-between items-center mb-24 border-b border-zinc-800 pb-6">
+        <div class="text-xl font-bold tracking-tighter">DR. ALEXANDRA REED <span class="emerald-text">.</span></div>
+        <div class="hidden md:flex space-x-8 mono uppercase tracking-widest text-xs">
+            <a href="#about" class="hover-emerald">About</a>
+            <a href="#research" class="hover-emerald">Research</a>
+            <a href="#projects" class="hover-emerald">Projects</a>
+            <a href="#blog" class="hover-emerald">Blog</a>
+            <a href="https://substack.com" class="text-emerald-400 font-bold border border-emerald-400 px-3 py-1 rounded hover:bg-emerald-400 hover:text-black transition">Subscribe</a>
         </div>
     </nav>
 
-    <header class="max-w-4xl mb-20">
-        <h2 class="text-5xl md:text-7xl mb-6">Bridging <span class="emerald-accent italic">Decentralized Systems</span> & Legal Frameworks.</h2>
-        <p class="mono text-gray-400">// AI RESEARCHER • BLOCKCHAIN ARCHITECT • POLICY CONSULTANT</p>
+    <header id="about" class="mb-32 max-w-4xl">
+        <p class="mono emerald-text mb-4">// RESEARCHER & ARCHITECT</p>
+        <h1 class="text-5xl md:text-7xl leading-tight mb-8">
+            Decentralizing <span class="italic">Intelligence</span>. 
+            Auditing the <span class="italic">Algorithm</span>.
+        </h1>
+        <p class="text-zinc-400 text-lg md:text-xl leading-relaxed">
+            Specializing in the intersection of LLM governance, zero-knowledge proofs, and digital jurisprudence. I bridge the gap between technical execution and regulatory compliance.
+        </p>
     </header>
 
-    </body>
+    <section id="research" class="mb-32">
+        <div class="flex items-baseline justify-between mb-12">
+            <h2 class="text-4xl">Featured Research</h2>
+            <span class="mono text-zinc-600">Total Publications: 12</span>
+        </div>
+
+        <div class="grid gap-8">
+            <div class="card p-8 rounded-r-lg">
+                <span class="mono text-emerald-500 text-xs">[2024] JOURNAL OF CYBER-LAW</span>
+                <h3 class="text-2xl mt-2 mb-4">The Legal Status of Autonomous AI Agents in DAO Governance</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="md:col-span-3">
+                        <p class="text-zinc-400 leading-relaxed mb-4">An exploration of fiduciary duty when smart contracts execute based on non-deterministic LLM outputs.</p>
+                        <p class="text-sm bg-zinc-900 p-4 border-l-2 border-emerald-800 italic text-zinc-300">
+                            <strong>TL;DR for Legal:</strong> Current frameworks fail to assign liability to decentralized models; we propose a "Computational Agency" model.
+                        </p>
+                    </div>
+                    <div class="flex flex-col justify-end">
+                        <a href="#" class="mono text-xs border border-zinc-700 p-2 text-center hover:bg-zinc-800">DOWNLOAD PDF</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="mb-32">
+        <h2 class="text-4xl mb-12 text-right">Projects & Labs</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="border border-zinc-800 p-6 hover:bg-zinc-900 transition group">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl emerald-text font-bold">Zk-Verify-Gov</h3>
+                    <a href="#" class="mono text-zinc-500 group-hover:text-white">↗ GITHUB</a>
+                </div>
+                <p class="text-zinc-400 text-sm mb-6">A framework for verifying AI training data provenance using Zero-Knowledge proofs without compromising trade secrets.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="mono text-[10px] bg-zinc-800 px-2 py-1 rounded">Rust</span>
+                    <span class="mono text-[10px] bg-zinc-800 px-2 py-1 rounded">Circom</span>
+                    <span class="mono text-[10px] bg-zinc-800 px-2 py-1 rounded">PyTorch</span>
+                </div>
+            </div>
+            
+            <div class="border border-zinc-800 p-6 hover:bg-zinc-900 transition group">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl emerald-text font-bold">Lex-Llama</h3>
+                    <a href="#" class="mono text-zinc-500 group-hover:text-white">↗ DEMO</a>
+                </div>
+                <p class="text-zinc-400 text-sm mb-6">Finetuned Llama-3 model optimized for parsing smart contract vulnerabilities relative to EU AI Act compliance.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="mono text-[10px] bg-zinc-800 px-2 py-1 rounded">HuggingFace</span>
+                    <span class="mono text-[10px] bg-zinc-800 px-2 py-1 rounded">Solidity</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="blog" class="text-center py-20 border-t border-zinc-800">
+        <h2 class="text-3xl mb-4 italic">Subscribe to the Essentials</h2>
+        <p class="text-zinc-500 mb-8 max-w-md mx-auto">Occasional deep dives into AI policy and cryptographic research delivered to your inbox.</p>
+        
+        <div class="bg-zinc-900 p-1 border border-zinc-700 max-w-sm mx-auto flex">
+            <input type="email" placeholder="email@example.com" class="bg-transparent p-2 flex-grow outline-none mono text-sm">
+            <button class="bg-emerald-600 px-6 py-2 text-sm font-bold hover:bg-emerald-500 transition">JOIN</button>
+        </div>
+        
+        <div class="mt-16 mono text-[10px] text-zinc-600 uppercase tracking-widest">
+            Built with Static HTML/Tailwind &bull; Hosted on GitHub
+        </div>
+    </footer>
+
+</body>
 </html>
 <iframe src="https://vadoarlabs.substack.com/embed" width="480" height="320" style="border: 1px solid #EEE; background: white" frameborder="0" scrolling="no"></iframe>
